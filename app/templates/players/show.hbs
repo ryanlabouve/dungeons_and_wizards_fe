@@ -15,7 +15,14 @@
     <p>{{player.quote}}</p>
     <ul>
       {{#each player.moves as |move|}}
-        <li>{{move.name}}</li>
+        <li>
+          {{move.name}}
+          <ul>
+            <li>Queue Time <strong>{{move.queue_time}}</strong></li>
+            <li>Damage <strong>{{move.damage}}</strong></li>
+          </ul>
+        </li>
+
       {{/each}}
     </ul>
     <p>&nbsp;</p>

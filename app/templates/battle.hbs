@@ -6,23 +6,40 @@
   "
 >
   <div style="flex-basis: 85%" class="white">
-    {{battle-scene}}
+    {{battle-scene battle=battle}}
   </div>
   <div
     class="white bg-black-5 clearfix pa4 ba bw3">
-    <div class="fl w-third">
+    <div class="fl w-25">
       <img src="{{player.image}}">
     </div>
-    <div class="fl w-third">
+    <div class="fl w-25">
       <h3>{{player.name}}</h3>
-      <p>Moves</p>
+      <p>Choose Move</p>
       <ul>
         {{#each player.moves as |move|}}
-          <li>{{move.name}}</li>
+        <li onclick={{perform stageAction move}} class="choose-move mt2">
+            {{move.name}}
+            <ul style="font-size: 11px;">
+              <li>Queue Time <strong>{{move.queue_time}}</strong></li>
+              <li>Damage <strong>{{move.damage}}</strong></li>
+            </ul>
+          </li>
         {{/each}}
       </ul>
     </div>
-    <div class="fl w-third">
+    <div class="fl w-25">
+      <h3>My Activity</h3>
+      <ul>
+      {{#each queuedActions as |axn|}}
+        <li class="mt2" style="font-size: 11px;">
+          {{if axn.success 'SUCCESS>' 'FAIL>'}}
+          {{axn.name}}
+        </li>
+      {{/each}}
+      </ul>
+    </div>
+    <div class="fl w-25">
       <h3>Recent Activity</h3>
     </div>
   </div>

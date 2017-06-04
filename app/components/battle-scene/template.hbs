@@ -3,13 +3,13 @@
 
   <div class="hp-bar-bg relative" style="">
     &nbsp;
-    <div style="position: absolute; top: 0; right: 0; width: 10%;
+    <div style="position: absolute; top: 0; right: 0; width: {{healthPercentage}};
     height: 100%; background: black;">
       &nbsp;
     </div>
   </div>
     <div>
-      TOWER PARTY HP (xx/xxx)
+      TOWER PARTY HP ({{sub battle.hp_total battle.damage_total}}/{{battle.hp_total}})
     </div>
   </div>
   <div

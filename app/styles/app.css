@@ -66,6 +66,7 @@ body {
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 100;
 }
 
 @keyframes shuffle {
@@ -89,4 +90,9 @@ body {
   background-image:-o-linear-gradient(left, #ff2b00 0%, #ffea00 25%,#2fff00 100%);
   background-image:-ms-linear-gradient(left, #ff2b00 0%, #ffea00 25%,#2fff00 100%);
   background-image:-webkit-gradient(linear, left bottom, right bottom, color-stop(0%,#ff2b00), color-stop(25%,#ffea00),color-stop(100%,#2fff00));
+}
+
+.choose-move:hover {
+  background: rgba(255,255,0,0.3);
+  cursor: pointer;
 }
