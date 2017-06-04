@@ -62,6 +62,12 @@ body {
   }
 }
 
+.close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 @keyframes shuffle {
   0% {
     left: 20%;
@@ -74,4 +80,13 @@ body {
   100% {
     left 20%;
   }
+}
+
+.hp-bar-bg {
+  background-image:-moz-linear-gradient(left, #ff2b00 0%, #ffea00 25%,#2fff00 100%);
+  background-image:linear-gradient(left, #ff2b00 0%, #ffea00 25%,#2fff00 100%);
+  background-image:-webkit-linear-gradient(left, #ff2b00 0%, #ffea00 25%,#2fff00 100%);
+  background-image:-o-linear-gradient(left, #ff2b00 0%, #ffea00 25%,#2fff00 100%);
+  background-image:-ms-linear-gradient(left, #ff2b00 0%, #ffea00 25%,#2fff00 100%);
+  background-image:-webkit-gradient(linear, left bottom, right bottom, color-stop(0%,#ff2b00), color-stop(25%,#ffea00),color-stop(100%,#2fff00));
 }
