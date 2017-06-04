@@ -1,5 +1,6 @@
 {
   "name": "dungeons-and-wizards-fe",
   "dependencies": {
+    "blob-polyfill": "^1.0.20150320"
   }
 }

@@ -20,8 +20,10 @@
     </ul>
     <p>&nbsp;</p>
     <p>&nbsp;</p>
-    {{#link-to "battle" class="link white bg-yellow ph3 pv3"}}
+    <button
+       onclick={{action "selectCharacterAndJoinBattle"}}
+       class="link white bg-yellow ph3 pv3">
       * JOIN BATTLE *
-    {{/link-to}}
+    </button>
   </div>
 </div>
