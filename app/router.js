@@ -7,7 +7,10 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('players');
+  this.route('players', function() {
+    this.route('show', { path: ':id' });
+  });
+  this.route('battle');
 });
 
 export default Router;

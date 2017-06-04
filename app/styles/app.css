@@ -1,5 +1,11 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
-  overflow: hidden;
   font-family: 'Press Start 2P', cursive;
 }
 
@@ -13,4 +19,28 @@ body {
 
 .bg-black-25 {
   background-color: rgba(0,0,0,0.25);
+}
+
+.card {
+  background: rgba(255,255,255,0.8);
+  min-height: 250px;
+  opacity: 0.8;
+}
+
+.card-big {
+  background: rgba(255,255,255,0.8);
+  width: 800px;
+}
+
+.magic-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card:hover {
+  box-shadow: 10px 10px 0px 0px rgba(255,242,0,1);
+  cursor: pointer;
+  opacity: 1;
 }

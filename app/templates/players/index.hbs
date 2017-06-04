@@ -1,0 +1,13 @@
+<div class="mt4">
+  <h2 class="white tc" >
+    Select Character
+  </h2>
+</div>
+
+<div class="player-list pa4">
+  {{#each players as |player|}}
+    {{select-player player=player goToPlayer=(action 'goToPlayer')}}
+  {{else}}
+    <p>No player found!</p>
+  {{/each}}
+</div>
