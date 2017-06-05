@@ -3,7 +3,7 @@
 
   <div class="hp-bar-bg relative" style="">
     &nbsp;
-    <div style="position: absolute; top: 0; right: 0; width: {{healthPercentage}};
+    <div style="position: absolute; top: 0; right: 0; width: {{sub 100 healthPercentage}}%;
     height: 100%; background: black;">
       &nbsp;
     </div>
@@ -22,13 +22,32 @@
       transform: translateX(-50%);
     "
     class="line-of-fire">
-    <img width=50 src="/images/fire.gif">
-    <img width=50 src="/images/fire.gif">
-    <img width=50 src="/images/fire.gif">
-    <img width=50 src="/images/fire.gif">
-    <img width=50 src="/images/fire.gif">
-    <img width=50 src="/images/fire.gif">
+    {{#if oneForthsDead}}
+      <img width=50 src="/images/fire.gif">
+      <img width=50 src="/images/fire.gif">
+      <img width=50 src="/images/fire.gif">
+    {{/if}}
+    {{#if halfDead}}
+      <img width=50 src="/images/fire.gif">
+      <img width=50 src="/images/fire.gif">
+      <img width=50 src="/images/fire.gif">
+    {{/if}}
+    {{#if threeForthsDead}}
+      <img width=50 src="/images/fire.gif">
+      <img width=50 src="/images/fire.gif">
+    {{/if}}
   </div>
+  {{#if dead}}
+  <img src="/images/fire.gif"
+    style="position: absolute;
+      bottom: 0;
+      left: 50%;
+      opacity: 0.6;
+      transform: translateX(-50%);
+      z-index:2;
+  "
+  >
+  {{/if}}
   <img
     style="position: absolute;
       bottom: 0;
@@ -42,7 +61,8 @@
     style="
       position: absolute;
       left: 20%;
-      animation: bounce 0.4s infinite, shuffle 10s infinite;
+      {{if (not threeForthsDead) "animation: bounce 0.4s infinite, shuffle 10s infinite;"}}
+      {{if threeForthsDead "transform: rotate(90deg);"}}
       z-index: 3;
       bottom: 0;
       "
@@ -54,9 +74,10 @@
     style="
       position: absolute;
       left: 20%;
-      z-index: 3;
-      animation: bounce 0.5s infinite, shuffle 5s infinite;
       bottom: 0;
+      z-index: 3;
+      {{if almostDead "transform: rotate(-70deg); left: 60%; bottom: -40px; z-index:1;"}}
+      {{if (not almostDead) "animation: bounce 0.5s infinite, shuffle 5s infinite;"}}
       "
     >
     <img width=100 src="/images/fiend2.png">
