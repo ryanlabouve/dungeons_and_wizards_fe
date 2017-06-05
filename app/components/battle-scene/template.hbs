@@ -1,6 +1,10 @@
 <div style="height: 100%; position: relative; padding-top: 1px;">
   <div id="hpBar" class="w-80 mt4 tc" style="margin: 40px auto; line-height: 2; text-shadow: 0 0 10px black;">
 
+  <div class="flash"
+      style="{{if recentlyAttacked "animation: flash 0.4s 2;"}}"
+  >
+  </div>
   <div class="hp-bar-bg relative" style="">
     &nbsp;
     <div style="position: absolute; top: 0; right: 0; width: {{sub 100 healthPercentage}}%;
