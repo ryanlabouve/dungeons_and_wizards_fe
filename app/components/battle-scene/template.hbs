@@ -5,14 +5,16 @@
       style="{{if recentlyAttacked "animation: flash 0.4s 2;"}}"
   >
   </div>
-  <div
-    style="background: rgba(255,255,255,0.6); opacity: 0.8; z-index: 1000"
-    class="tc magic-center pa3">
-    <span class="f1 gold">VICTORY</span>
-    <p>start: {{moment battle.created_at}}</p>
-    <p>end: {{moment battle.victory_at}}</p>
-    <p>duration: {{startToEnd}}</p>
-  </div>
+  {{#if dead}}
+    <div
+      style="background: rgba(255,255,255,0.6); opacity: 0.8; z-index: 1000"
+      class="tc magic-center pa3">
+      <span class="f1 gold">VICTORY</span>
+      <p>start: {{moment battle.created_at}}</p>
+      <p>end: {{moment battle.victory_at}}</p>
+      <p>duration: {{startToEnd}}</p>
+    </div>
+  {{/if}}
   <div class="hp-bar-bg relative" style="">
     &nbsp;
     <div style="position: absolute; top: 0; right: 0; width: {{sub 100 healthPercentage}}%;
