@@ -118,3 +118,7 @@ body {
     opacity: 1;
   }
 }
+
+.pane {
+  max-height: 300px; overflow: scroll
+}

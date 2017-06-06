@@ -10,7 +10,10 @@ export default Ember.Controller.extend({
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(move)
+      body: JSON.stringify({
+        player_id: this.get('player.id'),
+        move
+      })
     });
     let response = yield moveResponse.json();
 

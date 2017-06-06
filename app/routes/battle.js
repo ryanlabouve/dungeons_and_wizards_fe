@@ -10,11 +10,17 @@ export default Ember.Route.extend({
     let battle = fetch(`${config.apiHost}/battle`).then(function(response) {
       return response.json();
     });
+
+    let recentActivities = fetch(`${config.apiHost}/activities`).then(function(response) {
+      return response.json();
+    });
+
     let player = this.get('playerStorage');
 
     return Ember.RSVP.hash({
       player,
-      battle
+      battle,
+      recentActivities,
     });
   },
 
@@ -28,6 +34,7 @@ export default Ember.Route.extend({
     this._super(...arguments);
     controller.set('player', model.player);
     controller.set('battle', model.battle);
+    controller.set('recentActivities', model.recentActivities);
     this.get('pollServerForChanges').perform();
   },
 

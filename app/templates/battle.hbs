@@ -28,10 +28,10 @@
         {{/each}}
       </ul>
     </div>
-    <div class="fl w-25" style="max-height: 300px; overflow: scroll">
+    <div class="fl w-25 pane">
       <h3>My Activity</h3>
       <ul>
-      {{#each queuedActions as |axn|}}
+      {{#each (reverse queuedActions) as |axn|}}
         <li class="mt2" style="font-size: 11px;">
           {{if axn.success 'SUCCESS>' 'FAIL>'}}
           {{axn.name}}
@@ -39,8 +39,15 @@
       {{/each}}
       </ul>
     </div>
-    <div class="fl w-25">
+    <div class="fl w-25 pane">
       <h3>Recent Activity</h3>
+      <ul>
+      {{#each recentActivities as |activity|}}
+        <li class="mt2" style="font-size: 11px;">
+          {{activity.activity_by}} — {{activity.message}}
+        </li>
+      {{/each}}
+      </ul>
     </div>
   </div>
 </div>
