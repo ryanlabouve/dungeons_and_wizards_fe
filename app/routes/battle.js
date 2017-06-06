@@ -39,8 +39,11 @@ export default Ember.Route.extend({
   },
 
   pollServerForChanges: task(function*() {
-    while(true) {
-      yield timeout(1000);
+    let victory = null;
+    while(!victory) {
+      victory = Ember.get(this, 'controller.model.battle.victory_at');
+      if (victory) { break; }
+      yield timeout(2000);
       this.refresh();
     }
   }).cancelOn('deactivate').restartable()
